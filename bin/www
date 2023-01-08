@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-
+const dotenv = require('dotenv');
+dotenv.config({path: './.env'});
 /**
  * Module dependencies.
  */
 
 var app = require('../app');
-var debug = require('debug')('ecommerce-supra-store:server');
+var debug = require('debug')('project:server');
 var http = require('http');
 
 /**
