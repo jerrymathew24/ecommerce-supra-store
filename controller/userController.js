@@ -319,8 +319,8 @@ console.log(req.body,"gigigigig")
 
   getMenCategory: (req, res, next) => {
 
-    userHelpers.getAllProductsCat("Men").then((allCatProducts) => {
-      let category = "Men"
+    userHelpers.getAllProductsCat("MEN").then((allCatProducts) => {
+      let category = "MEN"
       var userDetails = req.session
       res.render('user/Category', { allCatProducts, user: true, userDetails, category })
     }).catch((error) => {
@@ -333,8 +333,8 @@ console.log(req.body,"gigigigig")
 
   getWomenCategory: (req, res, next) => {
 
-    userHelpers.getAllProductsCat("Women").then((allCatProducts) => {
-      let category = "Women"
+    userHelpers.getAllProductsCat("WOMEN").then((allCatProducts) => {
+      let category = "WOMEN"
       var userDetails = req.session
       res.render('user/Category', { allCatProducts, user: true, userDetails, category })
     }).catch((error) => {
@@ -347,8 +347,8 @@ console.log(req.body,"gigigigig")
 
   getKidsCategory: (req, res, next) => {
 
-    userHelpers.getAllProductsCat("kids").then((allCatProducts) => {
-      let category = "kids"
+    userHelpers.getAllProductsCat("KIDS").then((allCatProducts) => {
+      let category = "KIDS"
       var userDetails = req.session
       res.render('user/Category', { allCatProducts, user: true, userDetails, category })
     }).catch((error) => {
@@ -360,8 +360,8 @@ console.log(req.body,"gigigigig")
 
   getUnisexCategory: (req, res, next) => {
 
-    userHelpers.getAllProductsCat("Unisex").then((allCatProducts) => {
-      let category = "Unisex"
+    userHelpers.getAllProductsCat("UNISEX").then((allCatProducts) => {
+      let category = "UNISEX "
       var userDetails = req.session
       res.render('user/Category', { allCatProducts, user: true, userDetails, category })
     }).catch((error) => {

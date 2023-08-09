@@ -58,7 +58,7 @@ app.use(session({ secret: process.env.SESSION_SECRET,resave: true,saveUninitiali
 db.connect((err) => {
   if (err)
     console.log("Connection Error" + err);
-  else console.log("Database Connected to port 27017");
+  else console.log("Connected to MongoDB Atlas..");
 })
 // app.use(nocache())
 

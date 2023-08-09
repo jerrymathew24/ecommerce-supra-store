@@ -127,7 +127,7 @@
                                         <div class="check"></div>
                                     </div>
                                 </div>
-                                <div class="payment_item active">
+                                {{!-- <div class="payment_item active">
                                     <div class="radion_btn">
                                         <input type="radio" id="f-option6" name="Payment-method" value="ONLINE">
                                         <label for="f-option6">Razorpay </label>
@@ -135,7 +135,7 @@
                                         <div class="check"></div>
                                     </div>
 
-                                </div>
+                                </div> --}}
                                 <button class="primary-btn" onclick="couponUse('{{userDetails._id}}')"
                                     type="submit">Confirm </button>
                             </div>
@@ -218,44 +218,44 @@
                         Swal.fire("payment incompleted", "booking status pending", "error")
                         location.replace("/")
                     }
-                    else {
-                        console.log("rezorpayPayment")
-                        rezorpayPayment(response)
-                    }
+                   // else {
+                    //    console.log("rezorpayPayment")
+                      //  rezorpayPayment(response)
+                   // }
                 })
             })
         })
 92265
-        function rezorpayPayment(order) {
-            var options = {
-                "key": "rzp_test_9MA0VfBXpxI6iH", // Enter the Key ID generated from the Dashboard
-                "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                "currency": "INR",
-                "name": "Footlovers",
-                "description": "Test Transaction",
-                "image": "https://example.com/your_logo",
-                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                "handler": function (response) {
-
-                    verifyPayment(response, order)
-                },
-
-                "prefill": {
-                    "name": "Gaurav Kumar",
-                    "email": "gaurav.kumar@example.com",
-                    "contact": "9999999999"
-                },
-
-                "notes": {
-                    "address": "Razorpay Corporate Office"
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
-            var rzp1 = new Razorpay(options);
-            rzp1.open();
-        }
+  //      function rezorpayPayment(order) {
+    //        var options = {
+//            "key": "rzp_test_jptkYmRlh3dK8K", // Enter the Key ID generated from the Dashboard
+//                "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//                "currency": "INR",
+//                "name": "Footlovers",
+//                "description": "Test Transaction",
+//                "image": "https://example.com/your_logo",
+//                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//                "handler": function (response) {
+//
+//                    verifyPayment(response, order)
+//                },
+//
+//                "prefill": {
+//                    "name": "Gaurav Kumar",
+//                    "email": "gaurav.kumar@example.com",
+//                    "contact": "9999999999"
+//                },
+//
+//                "notes": {
+//                    "address": "Razorpay Corporate Office"
+//                },
+//                "theme": {
+//                    "color": "#3399cc"
+//                }
+//            };
+//            var rzp1 = new Razorpay(options);
+//            rzp1.open();
+//        }
 
         function verifyPayment(payment, order) {
             $.ajax({

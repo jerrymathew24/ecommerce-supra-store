@@ -141,7 +141,7 @@ module.exports = {
     },
 
 
-    getproductDetails: (productId) => {
+     getproductDetails: (productId) => {
         return new Promise((resolve, reject) => {
             db.get().collection(collections.PRODUCT_COLLECTION).findOne({ _id: objectId(productId) }).then((data) => {
                 resolve(data)

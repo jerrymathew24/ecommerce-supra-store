@@ -4,8 +4,8 @@ const state={
     db:null 
 }
 module.exports.connect=function(done){
-        const url='mongodb://localhost:27017'
-        const dbname='AllIndb'
+        const url=process.env.MONGO_URL
+        const dbname='suprastore'
 
         mongoClient.connect(url,(err,data)=>{
             if(err) return done(err)

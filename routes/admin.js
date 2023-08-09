@@ -11,16 +11,17 @@ const adminController=require('../controller/adminController')
 
 // ..............multer.........//
 
-const storage = multer.diskStorage({
-  destination: "public/product-images",
+const storage = multer.diskStorage({  
+  destination: (req,file,cb)=>{
+  cb(null,"public/product-images")
+},
   filename: (req, file, cb) => {
     cb(null, Date.now() + '--' + file.originalname);
-  },
+  }
 });
 
-const uploads = multer({
-  storage
-});
+
+const uploads = multer({storage})
 
 /* For Admin Session  */
 const verifyAdmin = ((req, res, next) => {
@@ -50,9 +51,6 @@ router.post('/',adminController.postLoginpage)
 // ..............homepage.........//
 router.get('/adminHome',verifyAdmin,adminController.getAdminHome);
 router.post('/total-revenue',verifyAdmin,adminController.TotalRevenueGraph)
-// router.post('/onlineCod',verifyAdmin,adminController.TotalRevenuePie)
-// router.post('/monthlySales',verifyAdmin,adminController.monthlySalesLineChart)
-// router.post('/catSales',verifyAdmin,adminController.catSalesDonut)
 
 // ..............order........//
 router.get('/orders',verifyAdmin,adminController.getOrders)

@@ -71,7 +71,7 @@ module.exports = {
       //   next(error)
       // })
     } catch (error) {
-      console.log(error, "getAdminHome");
+      console.log(error, "error getAdminHome");
       next(error)
     }
   },
