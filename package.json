@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "handlebars-cli src/templates -f dist/templates.js"
+    "build": "npm run build && handlebars src/templates -f dist/templates.js --extension 'hbs'"
 
   },
   "dependencies": {
