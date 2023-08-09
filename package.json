@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build": "npm run build"
+    "build": "handlebars-cli src/templates -f dist/templates.js"
 
   },
   "dependencies": {
