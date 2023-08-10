@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "build": "npm run build && handlebars src/templates -f dist/templates.js --extension 'hbs'"
+    "start": "nodemon app.js"
 
   },
   "dependencies": {
