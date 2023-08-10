@@ -1,13 +1,13 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const  dotenv =require('dotenv')
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars');
 const db = require('./config/connection');
 const session = require('express-session')
 const Swal = require('sweetalert2')
+require('dotenv').config()
 
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');

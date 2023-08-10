@@ -2,11 +2,11 @@ var db = require('../config/connection')
 var collections = require('../config/collections')
 const bcrypt = require('bcrypt');
 const objectId = require('mongodb').ObjectId
-const Razorpay = require('razorpay');
-var instance = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+// var instance = new Razorpay({
+//     key_id: process.env.RAZORPAY_KEY_ID,
+//     key_secret: process.env.RAZORPAY_KEY_SECRET,
+// });
+require('dotenv').config()
 
 module.exports = {
     doSignup: (userData) => {
