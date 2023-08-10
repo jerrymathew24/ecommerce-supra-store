@@ -53,7 +53,7 @@ app.use(function(req,res,next){
   next();
 })
 
-app.use(session({ secret: process.env.SESSION_SECRET,resave: true,saveUninitialized: true, cookie: { maxAge: 600000 } }))
+app.use(session({ secret: process.env.SESSION_SECRET, cookie: { maxAge: 600000 } }))
 
 db.connect((err) => {
   if (err)
@@ -81,4 +81,6 @@ app.use(function (err, req, res, next) {
   res.render('user/error');
 });
 
-module.exports = app;
+app.listen(process.env.PORT,()=>{
+  console.log("servet is running on 3000");
+})
